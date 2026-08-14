@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Trade | Carbon Credit Trading System</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><nav class="nav"><div class="nav-inner">
+<a class="logo" href="../index.html">Carbon<span>Trade</span></a>
+<div class="nav-links"><a href="dashboard.html">Dashboard</a><a href="marketplace.html">Marketplace</a><a href="trade.html">Trade</a><a href="leaderboard.html">Leaderboard</a><a href="profile.html">Profile</a><a href="#" data-logout>Logout</a></div>
+</div></nav>
+<main class="container page"><div class="page-head"><div><div class="eyebrow">Trading</div><h1>Trade Carbon Credits</h1><p style="color:#9db5a7">Manual trade and auto-match interfaces.</p></div></div>
+<div class="two"><div class="form-card" style="margin:0;max-width:none"><h2>Manual Trade</h2><form id="tradeForm"><label>Seller Company ID</label><input placeholder="C002" id="sellerId" required><label>Credits to Buy</label><input id="amount" type="number" min="0.01" step="0.01" required><button class="btn full">Execute Trade</button></form><div id="tradeResult" class="note">Waiting for trade.</div></div>
+<div class="card"><h2>Auto-Match</h2><p>The existing Java system supports automatic matching using company priority and available credits.</p><button class="btn" onclick="notify('Auto-match request submitted in the frontend demo.')">Run Auto-Match</button><div class="note">The actual matching logic remains in CarbonCreditSystem.java.</div></div></div></main>
+<script src="../js/app.js"></script></body></html>
