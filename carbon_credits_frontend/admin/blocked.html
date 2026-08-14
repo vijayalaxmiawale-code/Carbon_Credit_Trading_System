@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blocked Companies | Carbon Credit Trading System</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+
+        <a class="logo" href="../index.html">
+            Carbon<span>Trade</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="dashboard.html">Admin Dashboard</a>
+            <a href="companies.html">Companies</a>
+            <a href="blocked.html">Blocked Companies</a>
+            <a href="ledger.html">Ledger</a>
+            <a href="fraud.html">Fraud</a>
+            <a href="../index.html">Exit</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<main class="container page">
+
+    <div class="page-head">
+
+        <div>
+            <div class="eyebrow">Admin</div>
+
+            <h1>Blocked Companies</h1>
+
+            <p>
+                Companies that have been blocked by the administrator.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- BLOCKED COMPANIES TABLE -->
+
+    <div class="table-card">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Company</th>
+                    <th>Domain</th>
+                    <th>Credits</th>
+                    <th>Emission</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="blockedCompanyRows">
+
+                <!-- JavaScript will insert blocked companies here -->
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- MESSAGE WHEN NO COMPANY IS BLOCKED -->
+
+    <div id="noBlockedCompanies"
+         class="table-card"
+         style="display:none; margin-top:20px; padding:30px; text-align:center;">
+
+        <h3>No Blocked Companies</h3>
+
+        <p>
+            There are currently no blocked companies in the system.
+        </p>
+
+    </div>
+
+
+    <div style="margin-top:20px;">
+
+        <a href="companies.html" class="btn secondary">
+            ← Back to All Companies
+        </a>
+
+    </div>
+
+</main>
+
+
+<script src="../js/app.js"></script>
+
+</body>
+</html>

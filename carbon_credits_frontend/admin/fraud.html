@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fraud Center | Carbon Credit Trading System</title>
+
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="nav">
+
+    <div class="nav-inner">
+
+        <a class="logo"
+           href="../index.html">
+
+            Carbon<span>Trade</span>
+
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="dashboard.html">
+                Admin Dashboard
+            </a>
+
+            <a href="companies.html">
+                Companies
+            </a>
+
+            <a href="blocked.html">
+                Blocked Companies
+            </a>
+
+            <a href="ledger.html">
+                Ledger
+            </a>
+
+            <a href="fraud.html">
+                Fraud
+            </a>
+
+            <a href="../index.html">
+                Exit
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container page">
+
+
+    <!-- HEADER -->
+
+    <div class="page-head">
+
+        <div>
+
+            <div class="eyebrow">
+                Security
+            </div>
+
+            <h1>
+                Fraud Detection Center
+            </h1>
+
+            <p>
+                Review suspicious companies and take
+                administrative action.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= FRAUD RECORD ================= -->
+
+    <div class="table-card"
+         style="padding:24px;">
+
+        <h2>
+            C002 — Suspicious Activity
+        </h2>
+
+
+        <p style="margin-top:15px;">
+
+            This company has been flagged for
+            suspicious activity.
+
+        </p>
+
+
+        <p>
+
+            Possible reason:
+
+            Unusual trading activity detected
+            by the fraud detection rules.
+
+        </p>
+
+
+        <!-- STATUS -->
+
+        <div style="margin-top:20px;">
+
+            <span class="badge warn"
+                  id="fraudStatus">
+
+                FLAGGED
+
+            </span>
+
+        </div>
+
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div style="
+            display:flex;
+            gap:12px;
+            margin-top:25px;
+        ">
+
+
+            <!-- REVIEW -->
+
+            <button
+                class="btn"
+                onclick="reviewCompany('C002')">
+
+                Review
+
+            </button>
+
+
+
+            <!-- BLOCK -->
+
+            <button
+                class="btn secondary"
+                id="blockC002Button"
+                onclick="blockCompany('C002')">
+
+                Block Company
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= LINK ================= -->
+
+    <div style="margin-top:20px;">
+
+        <a href="blocked.html"
+           class="btn secondary">
+
+            View Blocked Companies
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+
+<script src="../js/app.js"></script>
+
+
+<script>
+
+/* =====================================================
+   REVIEW COMPANY
+   ===================================================== */
+
+function reviewCompany(companyId) {
+
+    alert(
+        "Reviewing company " +
+        companyId +
+        "."
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE BLOCK BUTTON WHEN PAGE LOADS
+   ===================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        if (
+            typeof isCompanyBlocked === "function" &&
+            isCompanyBlocked("C002")
+        ) {
+
+            const button =
+                document.getElementById(
+                    "blockC002Button"
+                );
+
+
+            if (button) {
+
+                button.textContent =
+                    "Company Blocked";
+
+                button.disabled = true;
+
+            }
+
+
+            const status =
+                document.getElementById(
+                    "fraudStatus"
+                );
+
+
+            if (status) {
+
+                status.textContent =
+                    "BLOCKED";
+
+            }
+
+        }
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

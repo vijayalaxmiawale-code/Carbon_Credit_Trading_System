@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Emission | Carbon Credit Trading System</title><link rel="stylesheet" href="../css/style.css"></head>
+<body><nav class="nav"><div class="nav-inner">
+<a class="logo" href="../index.html">Carbon<span>Trade</span></a>
+<div class="nav-links"><a href="dashboard.html">Dashboard</a><a href="marketplace.html">Marketplace</a><a href="trade.html">Trade</a><a href="leaderboard.html">Leaderboard</a><a href="profile.html">Profile</a><a href="#" data-logout>Logout</a></div>
+</div></nav>
+<main class="container page"><div class="page-head"><div><div class="eyebrow">Monthly Monitoring</div><h1>Update Emission</h1><p style="color:#9db5a7">Same input categories used by the Java calculation.</p></div></div>
+<div class="two"><div class="form-card" style="margin:0;max-width:none"><form id="emissionForm">
+<label>Electricity used this month (kWh)</label><input id="electricity" type="number" min="0" required>
+<label>Fuel used this month (litres)</label><input id="fuel" type="number" min="0" required>
+<label>Production volume this month (units)</label><input id="production" type="number" min="0" required>
+<label>Domain multiplier</label><select id="multiplier"><option value="2.5">MANUFACTURING — 2.5</option><option value="3">ENERGY — 3.0</option><option value="1.8">TRANSPORT — 1.8</option><option value=".6">IT — 0.6</option><option value="1.2">AGRICULTURE — 1.2</option></select>
+<button class="btn full">Calculate New Emission</button></form></div>
+<div class="card"><h3>Calculated Emission</h3><div id="emissionResult" style="font-size:36px;font-weight:800;margin:25px 0">—</div><p>The Java application calculates: electricity × 0.82 + fuel × 2.68 + production × domain multiplier × 5, then converts kg to tonnes.</p></div></div></main>
+<script src="../js/app.js"></script></body></html>
